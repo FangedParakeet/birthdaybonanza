@@ -1,0 +1,48 @@
+#splash img {
+	position: absolute;
+	width: 10vw;
+	margin-top: -5vw;
+	margin-left: -5vw;
+	z-index: -1;
+}
+	#splash #fire {
+		bottom: 10vw;
+		left: 50vw;
+	}
+	#splash #netscape {
+		top: 10vw;
+		left: 50vw;
+	}
+	#splash #baby {
+		top: 15vw;
+		left: 20vw;
+	}
+	#splash #smiley {
+		bottom: 15vw;
+		left: 20vw;
+	}
+	#splash #pirate {
+		top: 15vw;
+		right: 20vw;
+	}
+	#splash #slave {
+		bottom: 15vw;
+		right: 20vw;
+	}
+
+	#splash #firework1 {
+		top: 20vw;
+		left: 40vw;
+	}
+	#splash #firework3 {
+		top: 20vw;
+		right: 40vw;
+	}
+	#splash #firework2 {
+		bottom: 15vw;
+		left: 35vw;
+	}
+	#splash #firework4 {
+		bottom: 15vw;
+		right: 35vw;
+	}

@@ -4,34 +4,39 @@ require_once 'curly.php';
 
 class Youtube extends Curly {
 
-	const API_KEY = "AIzaSyD5MD3BJ2Hjc7NA-foHnh0WKxGVctuSTfk",
-		BASE_URL = "https://www.googleapis.com/youtube/v3/playlistItems",
+	const BASE_URL = "https://www.googleapis.com/youtube/v3/playlistItems",
 		PLAYLIST_ID = "PLyaYPxlwUdmqbZV9jZ1Ph_GP-xYYegRKh",
 		LIMIT = 50;
 
-	private $_query;
+	private $_key;
 
 	public function __construct(){
-		list($this->_query) = $this->checkGet(array("query"));
-		$this->checkEmpty(array($this->_query));
+		$ini = parse_ini_file("/etc/russki/credentials.ini", true);
+		$credentials = $ini["google"];
+		$this->_key = $credentials["api_key"];
 	}
+
 
 	public function getVideos(){
 		$videos = array();
 		$nextPageToken = false;
+		$continue = true;
 
-		while(count($videos) < self::LIMIT){
+		while($continue){
 			$results = $this->getResults($nextPageToken);
 			$videos = $this->getVideosFromResults($videos, $results);
 
-			if(!$results["nextPageToken"]){
+			$continue = isset($results["nextPageToken"]);
+
+			if($continue){
+				$nextPageToken = $results["nextPageToken"];
+			} else {
 				if(empty($videos)){
 					throw new Exception("Could not find videos");
 				} else {
 					break;
 				}
 			}
-			$nextPageToken = $results["nextPageToken"];
 		}
 
 		return $videos;
@@ -44,8 +49,8 @@ class Youtube extends Curly {
 		$args = array(
 			"part" 		 => "snippet",
 			"playlistId" => self::PLAYLIST_ID,
-			"maxResults" => 50,
-			"key" 		 => self::API_KEY
+			"maxResults" => self::LIMIT,
+			"key" 		 => $this->_key
 		);
 		if($nextPageToken){
 			$args["pageToken"] = $nextPageToken;
@@ -60,12 +65,9 @@ class Youtube extends Curly {
 			throw new Exception("Could not find videos");
 		}
 
-		foreach ($results["items"] as $video) {
-			if(isset($video["id"]["videoId"])){
-				$videos[] = $video;
-				if(count($videos) == self::LIMIT){
-					break;
-				}
+		foreach ($results["items"] as $item) {
+			if(isset($item["snippet"]["resourceId"])){
+				$videos[] = $item["snippet"];
 			}
 		}
 
