@@ -13,10 +13,8 @@ setInterval(function(){
 			}
 		}
 		var randIndex = Math.floor(Math.random() * colours.length);
-		var opacity = Math.floor((Math.random() * 4) + 5) / 10;
 		var newClass = colours[randIndex];
 		$light.addClass(newClass);
-		$light.css({opacity: opacity});
 		var thisLight = $light;
 			thisLight.fadeIn(200);
 		lightsOn.push(thisLight);

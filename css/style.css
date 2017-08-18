@@ -6,13 +6,21 @@ html, body {
 body {
 	background: #152596;
 	color: #c3190c;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: "propagandaregular", "Comic Sans MS", cursive, sans-serif;
 }
 
 h1 {
 	text-align: center;
+	font-size: 5vmin;
+	line-height: 5vmin;
+	text-shadow: 0.5vmin 0.5vmin 0.5vmin rgba(0,0,0,0.5);
+}
+h2 {
+	text-align: center;
 	font-size: 4vmin;
 	line-height: 4vmin;
+	padding: 1vmin;
+	color: #5d0b05;
 }
 
 .table {
@@ -27,10 +35,57 @@ h1 {
 	vertical-align: middle;
 }
 
+#arrow_box {
+	position: absolute;
+	margin-top: -3vmin;
+	top: 50%;
+	cursor: pointer;
+}
+	#arrow_box.left {
+		left: 10%;
+	}
+	#arrow_box.right {
+		right: 10%;
+	}
+.arrow_box {
+	position: relative;
+	background: #c3190c;
+}
+.arrow_box:after {
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(195, 25, 12, 0);
+	border-width: 6vmin;
+	margin-top: -6vmin;
+}
+	.arrow_box.left:after {
+		border-right-color: #c3190c;
+		right: 100%;
+	}
+	.arrow_box.right:after {
+		border-left-color: #c3190c;
+		left: 100%;
+	}
+
+
 .container {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
+
+#slider {
+	height: 100%;
+	width: 100%;
+}
+	.slick-list, .slick-track {
+		height: 100%;
+	}
 
 
 #loader {
@@ -44,14 +99,38 @@ h1 {
 }
 	#loader img {
 		display: block;
-		width: 30vw;
+		height: 50vh;
 		margin: 0px auto;
 	}
 
 
-#splash {
+#splash, #dags {
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
 	position: relative;
+}
+
+
+#dags {
+	background: #000;
+}
+	#next {
+		background: #c3190c;
+		width: 16vw;
+		margin-left: -8vw;
+		position: absolute;
+		bottom: 10%;
+		left: 50%;
+		cursor: pointer;
+	}
+
+#canvas {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
 }
 
