@@ -62,7 +62,8 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var playa;
+var playa,
+	audio = new Audio("lib/static.mp3");
 function onYouTubeIframeAPIReady() {
   playa = new YT.Player('playa', {
     height: '100%',
@@ -80,7 +81,6 @@ function onPlayerStateChange(event){
 	}
 }
 function playVideo(){
-	console.log("play");
 	var video = videos[vidIndex];
 	playa.loadVideoById(video.resourceId.videoId, 0, "default");
 	$("#canvas").hide();
@@ -91,14 +91,17 @@ function playVideo(){
 	}
 }
 function startGame(){
-	console.log("start");
-	$("#canvas").show();
 	var video = videos[vidIndex];
-	setTimeout(playVideo, 500);
+	next();
 }
 function next(){
 	$("#canvas").show();
-	setTimeout(playVideo, 500);
+	audio.play();
+	setTimeout(function(){
+		audio.pause();
+		audio.load();
+		playVideo();
+	}, 500);
 }
 
 function shuffle(a) {
