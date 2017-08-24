@@ -114,14 +114,6 @@ function shuffle(a) {
 
 // iTunes Player
 var itunes = new Audio("audio/birthday.mp3");
-itunes.addEventListener("timeupdate", function(){
-	var elapsed = formatTime(this.currentTime),
-		remaining = formatTime(this.duration - this.currentTime),
-		progress = (this.currentTime / this.duration) * 100;
-	$("#elapsed").html(elapsed);
-	$("#remaining").html(remaining);
-	$("#bottom .duration .complete").css("width", progress + "%");
-});
 
 var controls = {};
 	controls.index = 0;
@@ -246,6 +238,17 @@ var controls = {};
 			this.updateTitles();
 		}
 	}
+
+itunes.addEventListener("timeupdate", function(){
+	var elapsed = formatTime(this.currentTime),
+		remaining = formatTime(this.duration - this.currentTime),
+		progress = (this.currentTime / this.duration) * 100;
+	$("#elapsed").html(elapsed);
+	$("#remaining").html(remaining);
+	$("#bottom .duration .complete").css("width", progress + "%");
+	controls.resetIndex();
+	controls.updateTitles();
+});
 
 $("#track").click(function(){
 	controls.downloadTrack();
