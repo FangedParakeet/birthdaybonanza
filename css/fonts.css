@@ -5,3 +5,10 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'lucidagrande';
+    src: url('fonts/911fonts.com_lucidagranderegular__-_911fonts.com-fonts-ynwe-webfont.woff2') format('woff2'),
+         url('fonts/911fonts.com_lucidagranderegular__-_911fonts.com-fonts-ynwe-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

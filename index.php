@@ -8,8 +8,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -21,6 +19,8 @@
 	  document.write(unescape('%3Cscript%20src%3D%22js/jquery.min.js%22%3E%3C/script%3E'));
 	}
 	</script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
@@ -87,29 +87,45 @@
 			<!-- Choons -->
 			<div id="choons">
 				<div id="top">
-					<img src="" alt="">
+					<div class="table">
+						<div class="table-cell">
+							<img src="img/art/0.jpg" alt="MAGA" id="album">
+						</div>
+					</div>
 				</div>
 				<div id="bottom">
 					<div class="audio">
 						<div class="duration">
 							<div class="complete"></div>
 						</div>
-						<span id="elapsed"></span>
-						<span id="remaining"></span>
+						<span id="elapsed">0:00</span>
+						<span id="remaining">43:30</span>
 					</div>
-					<div class="title">
-						<h3></h3>
-						<p></p>
-					</div>
-					<div class="buttons">
-						<span class="glyphicon glyphicon-download" aria-hidden="true" id="track"></span>
-						<span class="glyphicon glyphicon-step-backward" aria-hidden="true" id="prev"></span>
-						<span class="glyphicon glyphicon-play" aria-hidden="true" id="play"></span>
-						<span class="glyphicon glyphicon-pause" aria-hidden="true" id="pause"></span>
-						<span class="glyphicon glyphicon-step-forward" aria-hidden="true" id="forward"></span>
-						<span class="glyphicon glyphicon-download-alt" aria-hidden="true" id="mix"></span>
+					<div class="info">
+						<div class="table">
+							<div class="table-cell">
+								<div class="title">
+									<h3>Let Me Be Me</h3>
+									<p>Nite-Funk</p>
+								</div>
+								<div class="buttons">
+									<span class="glyphicon glyphicon-download" aria-hidden="true" id="track"></span>
+									<span class="glyphicon glyphicon-step-backward" aria-hidden="true" id="prev"></span>
+									<span class="glyphicon glyphicon-play" aria-hidden="true" id="play"></span>
+									<span class="glyphicon glyphicon-pause" aria-hidden="true" id="pause"></span>
+									<span class="glyphicon glyphicon-step-forward" aria-hidden="true" id="forward"></span>
+									<span class="glyphicon glyphicon-download-alt" aria-hidden="true" id="mix"></span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<div id="arrow_box" class="left">
+					<div class="arrow_box left splash">
+						<h2>BACK</h2>
+					</div>					
+				</div>				
 			</div>
 			
 
