@@ -25,7 +25,7 @@ $("#slider").slick({
 $("#slider").on("afterChange", function(slick, currentSlide){
 	if(currentSlide.currentSlide === 0){
 		// play videos
-		startGame();
+		next();
 	}
 });
 
@@ -89,10 +89,6 @@ function playVideo(){
 		vidIndex = 0;
 		shuffle(videos);
 	}
-}
-function startGame(){
-	var video = videos[vidIndex];
-	next();
 }
 function next(){
 	$("#canvas").show();

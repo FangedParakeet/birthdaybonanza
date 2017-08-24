@@ -3,6 +3,13 @@
 <head>
 	<title>HAPPY BIRTHDAY ANYA ANDREEVA</title>
 	<link rel="shortcut icon" href="img/favicon1.ico" />
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -18,7 +25,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-	<div class="container">
+	<div class="kontainer">
 		<!-- Slider -->
 		<div id="slider">
 
@@ -74,6 +81,34 @@
 					<div class="arrow_box right tunes">
 						<h2>TUNES</h2>
 					</div>					
+				</div>
+			</div>
+
+			<!-- Choons -->
+			<div id="choons">
+				<div id="top">
+					<img src="" alt="">
+				</div>
+				<div id="bottom">
+					<div class="audio">
+						<div class="duration">
+							<div class="complete"></div>
+						</div>
+						<span id="elapsed"></span>
+						<span id="remaining"></span>
+					</div>
+					<div class="title">
+						<h3></h3>
+						<p></p>
+					</div>
+					<div class="buttons">
+						<span class="glyphicon glyphicon-download" aria-hidden="true" id="track"></span>
+						<span class="glyphicon glyphicon-step-backward" aria-hidden="true" id="prev"></span>
+						<span class="glyphicon glyphicon-play" aria-hidden="true" id="play"></span>
+						<span class="glyphicon glyphicon-pause" aria-hidden="true" id="pause"></span>
+						<span class="glyphicon glyphicon-step-forward" aria-hidden="true" id="forward"></span>
+						<span class="glyphicon glyphicon-download-alt" aria-hidden="true" id="mix"></span>
+					</div>
 				</div>
 			</div>
 			
