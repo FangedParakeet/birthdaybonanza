@@ -203,11 +203,11 @@ var controls = {};
 		$("#play").show();
 	}
 	controls.downloadTrack = function(){
-		var file = "audio/" + this.index + ".mp3";
+		var file = "lib/download.php?type=1&track=" + this.index;
 		window.open(file);
 	}
 	controls.downloadMix = function(){
-		window.open("audio/birthday.mp3");
+		window.open("lib/download.php?type=2");
 	}
 	controls.updateTitles = function(){
 		var elapsed = formatTime(itunes.currentTime);
